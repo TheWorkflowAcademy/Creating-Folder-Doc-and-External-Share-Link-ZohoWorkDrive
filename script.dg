@@ -65,7 +65,7 @@ header.put("Accept","application/vnd.api+json");
 data = {"data":{"attributes":{"status":"1"},"type":"files"}};
 markAsReady = invokeurl
 [
-	url :"https://workdrive.zoho.com/api/v1/files/" + INSERT_WRITER_DOC_ID
+	url :"https://workdrive.zoho.com/api/v1/files/" + "INSERT_WRITER_DOC_ID"
 	type :PATCH
 	parameters:data.toString()
 	headers:header
