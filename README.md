@@ -114,11 +114,14 @@ info shareLink;
 If you are generating an external share link for a new blank doc that you have created via Deluge, chances are you might run into this error:
 * {"errors":[{"id":"R012","title":"Resource is not in active status to process this action"}]}
 
-For some reason, when a new blank Writer Doc is created via custom function, it is by default in a *DRAFT* status. Because of that, the generate external share link function cannot execute successfully. In order to overcome this, you would first need to change the document status to *ACTIVE* before generating the share link. Here's how you can do it.
+For some reason, when a new blank Writer Doc is created via custom function, it is by default in a **DRAFT** status. Because of that, the generate external share link function cannot execute successfully. In order to overcome this, you would first need to change the document status to **ACTIVE** before generating the share link. Here's how you can do it.
 
 #### Mark Document as Ready
-The script below marks the newly created Writer Doc as ready, converting it from *DRAFT* status to *ACTIVE*.
-* Note: You can get the Writer document ID by getting info on the new Writer document creation function response.
+The script below marks the newly created Writer Doc as ready, converting it from **DRAFT** status to **ACTIVE**.
+* Note:
+	* Make sure that this script is placed above the "Generate External Share Link" script
+	* You can get the Writer document ID by getting info on the new Writer document creation function response.
+	
 
 ```javascript
 header = Map();
