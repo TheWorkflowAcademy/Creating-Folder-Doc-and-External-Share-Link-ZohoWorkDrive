@@ -43,7 +43,7 @@ newDoc = invokeurl
 ];
 ```
 
-#### 3. Merge a Writer Template and Store the Created Document in a Folder
+#### 3. Merge and Store a Document in a Folder
 This enables you to create a document by merging fields into a Writer Doc template and store in a Workdrive folder.
 ```javascript
 values_map = Map();
