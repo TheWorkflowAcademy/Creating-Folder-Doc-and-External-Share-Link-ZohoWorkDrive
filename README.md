@@ -32,7 +32,7 @@ This script creates a new blank Zoho Writer doc within a WorkDrive folder.
 
 ```javascript
 attributes = Map();
-attributes.put("filename","INSERT FILE NAME HERE");
+attributes.put("filename","INSERT FILE NAME");
 attributes.put("folder_id","INSERT MAIN FOLDER ID");
 newDoc = invokeurl
 [
