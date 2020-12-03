@@ -1,4 +1,4 @@
-# Folder-Doc-Creation-External-Share-Link-ZohoWorkdrive
+# Folder-Doc-Creation-External-Share-Link-ZohoWorkdrive-ZohoWriter
 A guide on how to create a folder within another folder on Zoho Workdrive, and to create/merge Writer Documents and store in a Workdrive folder.
 
 ## Core Idea
