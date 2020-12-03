@@ -1,16 +1,16 @@
-# Creating-Folder-Doc-and-External-Share-Link-ZohoWorkdrive
-A guide on how to create a folder within another folder on Zoho Workdrive, and to create/merge Writer Documents and store in a Workdrive folder.
+# Creating-Folder-Doc-and-External-Share-Link-ZohoWorkDrive
+A guide on how to create a folder within another folder on Zoho WorkDrive, and to create/merge Writer Documents and store in a WorkDrive folder.
 
 ## Core Idea
-If you've ever searched for the Zoho Workdrive API documentation online, you'd realize that there isn't an official published documentation online yet. The closest thing to one is this unpublished document (https://writer.zohopublic.com/writer/published/ankqibdb934759c6446bca8899b2f426428fc). While useful, it's still not comprehensive and the explanations are not thorough.
+If you've ever searched for the Zoho WorkDrive API documentation online, you'd realize that there isn't an official published documentation online yet. The closest thing to one is this unpublished document (https://writer.zohopublic.com/writer/published/ankqibdb934759c6446bca8899b2f426428fc). While useful, it's still not comprehensive and the explanations are not thorough.
 
 In this document, we will cover the following:
-* Creating a folder within another folder on Workdrive
-* Creating/Merging a Writer Doc and storing in a Workdrive folder
+* Creating a folder within another folder on WorkDrive
+* Creating/Merging a Writer Doc and storing in a WorkDrive folder
 * Generating an External Share Link for the Folder/Document
 
 ## Configuration
-* Zoho Workdrive OAuth Connections Scopes Needed:
+* Zoho WorkDrive OAuth Connections Scopes Needed:
   * WorkDrive.Files.ALL
 * Zoho Writer OAuth Connections Scopes Needed:
   * ZohoWriter.documentEditor.ALL
@@ -18,17 +18,17 @@ In this document, we will cover the following:
 
 ## Tutorial
 
-### Create Folder/Doc in Workdrive
+### Create Folder/Doc in WorkDrive
 
 #### 1. Create a Folder Within Another Folder
-Zoho has made this part easy with a `createFolder` function. Just input the subfolder name, main folder ID (you can get this at the end of the URL on Workdrive), and your Workdrive Connection name.
+Zoho has made this part easy with a `createFolder` function. Just input the subfolder name, main folder ID (you can get this at the end of the URL on Workdrive), and your WorkDrive Connection name.
 
 ```javascript
  response = zoho.workdrive.createFolder("INSERT SUBFOLDER NAME", "INSERT MAIN FOLDER ID", "INSERT_WORKDRIVE_OAUTH_CONNECTION");
 ```
 
 #### 2. Create a New Document in a Folder
-This script creates a new blank Zoho Writer doc within a Workdrive folder.
+This script creates a new blank Zoho Writer doc within a WorkDrive folder.
 
 ```javascript
 attributes = Map();
