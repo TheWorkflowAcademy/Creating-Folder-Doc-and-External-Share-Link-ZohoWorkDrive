@@ -1,0 +1,75 @@
+//Script to Create Folder within Another Folder
+ response = zoho.workdrive.createFolder("INSERT SUBFOLDER NAME", "INSERT MAIN FOLDER ID", "INSERT_WORKDRIVE_OAUTH_CONNECTION");
+info response;
+
+
+//Script to Create a New Document in a Folder
+attributes = Map();
+attributes.put("filename","INSERT FILE NAME HERE");
+attributes.put("folder_id","INSERT MAIN FOLDER ID");
+newDoc = invokeurl
+[
+	url :"https://zohoapis.com/writer/api/v1/documents"
+	type :POST
+	parameters:attributes
+	connection:"INSERT_WRITER_OAUTH_CONNECTION"
+];
+info newDoc;
+
+
+//Script to Merge a Writer Template and Store the Created Document in a Folder
+values_map = Map();
+values_map.put("INSERT MERGE FIELD NAME","INSERT MERGE FIELD VALUE"); //Add more accordingly
+output_settings = Map();
+output_settings.put("doc_name","INSERT FILE NAME HERE");
+output_settings.put("folder_id","INSERT FOLDER ID");
+createDoc = zoho.writer.mergeAndStore("INSERT WRITER DOC TEMPLATE ID",values_map,output_settings,"INSERT_WORKDRIVE_OAUTH_CONNECTION");
+info createDoc;
+
+
+//Script to Create External Share Link
+
+//Header
+mp = Map();
+mp.put("Accept","application/vnd.api+json");
+
+//Parameters Map
+externalLinkMap = Map();
+externalLinkMap.put("resource_id","INSERT FOLDER OR WRITER DOC ID");
+externalLinkMap.put("link_name","INSERT A LINK NAME");
+externalLinkMap.put("request_user_data",false);
+externalLinkMap.put("allow_download",true);
+externalLinkMap.put("role_id","7");
+attributesMap = {"attributes":externalLinkMap,"type":"links"};
+dataMap = Map();
+dataMap.put("data",attributesMap);
+
+//API Call
+createExternalLink = invokeurl
+[
+	url :"https://workdrive.zoho.com/api/v1/links"
+	type :POST
+	parameters:dataMap.toString()
+	headers:mp
+	connection:"INSERT_WORKDRIVE_OAUTH_CONNECTION"
+];
+
+//Get External Share Link
+shareLink = createExternalLink.get("data").get("attributes").get("link");
+info shareLink;
+
+
+//Script to Mark Document as Ready (if needed). Make sure that it is placed above the “Generate External Share Link” script.
+header = Map();
+header.put("Accept","application/vnd.api+json");
+data = {"data":{"attributes":{"status":"1"},"type":"files"}};
+markAsReady = invokeurl
+[
+	url :"https://workdrive.zoho.com/api/v1/files/" + INSERT_WRITER_DOC_ID
+	type :PATCH
+	parameters:data.toString()
+	headers:header
+	connection:"INSERT_WRITER_OAUTH_CONNECTION"
+];
+info markAsReady;
+
