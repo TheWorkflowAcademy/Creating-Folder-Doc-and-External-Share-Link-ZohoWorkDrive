@@ -28,7 +28,7 @@ Zoho has made this part easy with the `createFolder` function. Just input the su
 ```
 
 #### 2. Create a New Document in a Folder
-This script creates a new blank Zoho Writer doc that is stored in the specified WorkDrive folder.
+This script creates a new blank Zoho Writer doc and stores in the specified WorkDrive folder.
 
 ```javascript
 attributes = Map();
