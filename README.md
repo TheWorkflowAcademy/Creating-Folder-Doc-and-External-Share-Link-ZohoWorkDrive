@@ -21,7 +21,7 @@ In this document, we will cover the following:
 ### Create Folder/Doc in WorkDrive
 
 #### 1. Create a Folder Within Another Folder
-Zoho has made this part easy with a `createFolder` function. Just input the subfolder name, main folder ID (you can get this at the end of the URL on Workdrive), and your WorkDrive Connection name.
+Zoho has made this part easy with the `createFolder` function. Just input the subfolder name, main folder ID (you can get this at the end of the URL on Workdrive), and your WorkDrive Connection name.
 
 ```javascript
  response = zoho.workdrive.createFolder("INSERT SUBFOLDER NAME", "INSERT MAIN FOLDER ID", "INSERT_WORKDRIVE_OAUTH_CONNECTION");
