@@ -2,7 +2,7 @@
 A guide on how to create a folder within another folder on Zoho WorkDrive, and to create/merge Writer Documents and store in a WorkDrive folder.
 
 ## Core Idea
-If you've ever searched for "Zoho WorkDrive API" online, you'd realize that there isn't an officially published document yet. The closest thing to one is this unpublished API doc that Zoho might provide you when you request for support (https://writer.zohopublic.com/writer/published/ankqibdb934759c6446bca8899b2f426428fc). While useful, it's still not comprehensive and the explanations are not thorough.
+If you've ever searched for "Zoho WorkDrive API" online, you'd realize that there isn't an official document published yet. The closest thing to one is this unpublished API doc that Zoho might provide you when you request for support (https://writer.zohopublic.com/writer/published/ankqibdb934759c6446bca8899b2f426428fc). While useful, it's still not comprehensive and the explanations are not thorough.
 
 In this document, we will cover the following:
 * Creating a folder within another folder on WorkDrive
