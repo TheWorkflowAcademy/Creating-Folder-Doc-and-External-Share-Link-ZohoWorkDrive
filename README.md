@@ -51,7 +51,7 @@ values_map.put("INSERT MERGE FIELD NAME","INSERT MERGE FIELD VALUE"); //Add more
 output_settings = Map();
 output_settings.put("doc_name","INSERT FILE NAME HERE");
 output_settings.put("folder_id","INSERT FOLDER ID");
-createDoc = zoho.writer.mergeAndStore("INSERT WRITER DOC TEMPLATE ID",values_map,output_settings,"INSERT_WORKDRIVE_OAUTH_CONNECTION");
+createDoc = zoho.writer.mergeAndStore("INSERT WRITER DOC TEMPLATE ID",values_map,output_settings,"INSERT_WRITER_OAUTH_CONNECTION");
 info createDoc;
 ```
 
