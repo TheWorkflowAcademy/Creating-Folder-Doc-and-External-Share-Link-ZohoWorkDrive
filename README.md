@@ -67,14 +67,15 @@ To create an external share link, an API call with a header and specific paramet
     * link_name: name used to identify the share link.
     * expiration_date: date in which the link will expire
     * role_id: permission of the share link
-      * 5 - External share for folder with *EDIT* access
-      * 6 - External share for folder with *VIEW* access
+      * 5 - External share for folder/document with *EDIT* access
+      * 6 - External share for folder/document with *VIEW* access
       * 7 - External share for folder with *UPLOAD* access
     * password_text: the text you set here will enable password protection for the document
     * input_fields: these are the fields mentioned in the request_user_data attribute 
   * Note:
     * No need to pass attributes like *input_fields, password_text* and *expiration_date* if the share link does not require user data, password protection and expiry date respectively.
     * Mandatory attributes like *resource_id, link_name, request_user_data*, and *allow_download* are required to create a custom share link.
+    * role_id 7 is only valid for folders. For documents, you can only select either 5 or 6.
 
 Below is the example script to generate an external share link. Configure the parameters attributes based on your requirements accordingly.
 
@@ -114,7 +115,9 @@ info shareLink;
 If you are generating an external share link for a new doc that you have created via Deluge, chances are you might run into this error:
 * {"errors":[{"id":"R012","title":"Resource is not in active status to process this action"}]}
 
-For some reason, when a new blank Writer Doc is created via custom function, it is by default in a **DRAFT** status. Because of that, the generate external share link function cannot execute successfully. In order to overcome this, you would first need to change the document status to **ACTIVE** before generating the share link. Here's how you can do it.
+When a new blank Writer Doc is created via custom function, it is by default in a **DRAFT** status. Because of that, the generate external share link function cannot execute successfully. In order to overcome this, you would first need to change the document status to **ACTIVE** before generating the share link. Here's how you can do it.
+
+*Note: If you're creating a document from a Writer template via the merge and store function, this is uneccessary as the document is by default ready to share.*
 
 #### Mark Document as Ready
 The script below marks the newly created Writer Doc as ready, converting it from **DRAFT** status to **ACTIVE**.
